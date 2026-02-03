@@ -1,26 +1,96 @@
 @import "tailwindcss";
 
 :root {
+  /* MyPetFriends Brand Colors */
+  --color-primary: #07a9ae;
+  --color-secondary: #ff6600;
+  --color-accent: #008994;
+  --color-accent-orange: #ec5a00;
+  --color-light: #f8f8f8;
+  --color-dark: #1a1a1a;
+
+  /* Semantic Colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+  --color-info: #3b82f6;
+
+  /* Base */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1a1a1a;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #07a9ae 0%, #008994 100%);
+  --gradient-secondary: linear-gradient(135deg, #ff6600 0%, #ec5a00 100%);
+  --gradient-ai: linear-gradient(135deg, #07a9ae 0%, #ff6600 50%, #ec5a00 100%);
 }
 
 @theme inline {
+  /* Colors */
+  --color-primary-*: initial;
+  --color-primary-50: #e6f7f8;
+  --color-primary-100: #b3e8ea;
+  --color-primary-200: #80d9dc;
+  --color-primary-300: #4dcace;
+  --color-primary-400: #1abbc0;
+  --color-primary-500: #07a9ae;
+  --color-primary-600: #06878b;
+  --color-primary-700: #056568;
+  --color-primary-800: #044345;
+  --color-primary-900: #022122;
+
+  --color-secondary-*: initial;
+  --color-secondary-50: #fff3e6;
+  --color-secondary-100: #ffdbb3;
+  --color-secondary-200: #ffc380;
+  --color-secondary-300: #ffab4d;
+  --color-secondary-400: #ff931a;
+  --color-secondary-500: #ff6600;
+  --color-secondary-600: #cc5200;
+  --color-secondary-700: #993d00;
+  --color-secondary-800: #662900;
+  --color-secondary-900: #331400;
+
+  --color-accent-*: initial;
+  --color-accent-500: #008994;
+
+  --color-success-*: initial;
+  --color-success-500: #10b981;
+
+  --color-warning-*: initial;
+  --color-warning-500: #f59e0b;
+
+  --color-error-*: initial;
+  --color-error-500: #ef4444;
+
+  --color-info-*: initial;
+  --color-info-500: #3b82f6;
+
+  /* Base colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Fonts */
+  --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove default margins */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }

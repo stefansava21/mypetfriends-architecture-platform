@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyPetFriends Architecture Platform
 
-## Getting Started
+Interactive architecture visualization for board presentations, technical due diligence, and investor meetings.
 
-First, run the development server:
+## Quick Start
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run dev          # Development (http://localhost:3001)
+npm run build        # Production build
+npx vercel --prod    # Deploy to Vercel
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Pages
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **/** - Strategic overview, differentiators, roadmap preview
+- **/architecture** - 5 layers, 33 components, interactive exploration
+- **/agentic-ai** - Multi-agent platform, 14 frameworks evaluated
+- **/roadmap** - 3-quarter plan (Q1-Q3 2026) to 1,000 policies
+- **/decisions** - Build vs Buy matrix with TCO analysis
+- **/integrations** - Key third-party integrations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Customization (No Code Changes Required)
 
-## Learn More
+### Update Dates/Currency/Metrics
+Edit **`config/settings.ts`**:
 
-To learn more about Next.js, take a look at the following resources:
+```typescript
+regional: {
+  currency: "RON",        // Change to $, €, RON
+  currencyCode: "RON",
+  locale: "ro-RO",
+},
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+document: {
+  version: "1.1",         // Update version
+  date: "March 2026",
+  lastUpdated: "2026-03-15",
+},
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+roadmap: {
+  startDate: "2026-02-01", // Adjust timeline
+  quarters: [...],         // Edit milestones
+},
 
-## Deploy on Vercel
+metrics: {
+  phase1: {
+    quoteConversion: "8%", // Update targets
+    timeToQuote: "60s",
+  },
+},
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Modify Components/Frameworks
+Edit **`data/architecture.ts`**:
+- Add/remove components
+- Update build vs buy decisions
+- Change SaaS options and costs
+- Mark frameworks as selected/not selected
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Presenting to Stakeholders
+
+**Board Advisors**: Homepage → Roadmap → Build vs Buy
+**Solution Architects**: Architecture (all 33 components) → Agentic AI → Integrations
+**AI Specialists**: Agentic AI (frameworks, evaluation, HITL) → Architecture
+**Investors**: Homepage (differentiators) → Roadmap (metrics) → Decisions (TCO)
+
+## Tech Stack
+
+Next.js 15, TypeScript, Tailwind CSS v4, Framer Motion, Lucide Icons
+
+## Key Features
+
+✅ Enterprise-grade design
+✅ Fully responsive
+✅ Production-ready
+✅ Static generation (fast loading)
+✅ Easy customization via config files
+
+---
+
+All data centralized in `config/settings.ts` and `data/architecture.ts`
